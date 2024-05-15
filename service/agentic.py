@@ -38,7 +38,7 @@ search = SearchApiAPIWrapper(searchapi_api_key=os.environ["Search_Api_Key"], eng
 rag_qa_chain = get_rag_chain(claude_llm)
 
 def jsSearch(query):
-    url = "http://0.0.0.0:9000/crawler"
+    url = os.environ["JS_URL"]+"/crawler"
     params = {
         "query": query  # You may want to decode the query if it's URL-encoded
     }
