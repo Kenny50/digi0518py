@@ -1,0 +1,14 @@
+fastapi
+langchain_community
+langchain_text_splitters
+cohere
+boto3
+langchain
+langchain_core
+python-dotenv
+jq
+tiktoken
+scikit-learn
+numpy
+gpt4all
+bert-extractive-summarizer
