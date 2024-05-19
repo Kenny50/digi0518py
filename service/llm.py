@@ -7,7 +7,7 @@ load_dotenv()
 
 bedrock_runtime = boto3.client(
     "bedrock-runtime", 
-    region_name='us-east-1',
+    region_name='us-west-2',
     aws_access_key_id=os.environ["AccessKey"],
     aws_secret_access_key=os.environ["SecretAccessKey"],
 )

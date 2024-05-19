@@ -16,13 +16,13 @@ load_dotenv()
 
 bedrock_runtime = boto3.client(
     "bedrock-runtime", 
-    region_name='us-east-1',
+    region_name='us-west-2',
     aws_access_key_id=os.environ["AccessKey"],
     aws_secret_access_key=os.environ["SecretAccessKey"],
 )
 
 boto_session = boto3.Session(
-    region_name='us-east-1',
+    region_name='us-west-2',
     aws_access_key_id=os.environ["AccessKey"],
     aws_secret_access_key=os.environ["SecretAccessKey"],
 )
@@ -51,8 +51,8 @@ LLM_AGENT_TOOLS = [
         name="SemanticSearch",
         func=lambda query: rag_qa_chain({"question": query}),
         description=(
-            "當你被問到關於高雄的景點推薦或是旅遊建議時，請使用這項工具"
-            "Use when you are asked questions about attraction recommendations or travel advice in Taiwan kaohsiung"
+            "當你被問到關於高雄的景點推薦時，請使用這項工具"
+            "Use when you are asked questions about attraction recommendations in Taiwan kaohsiung"
             " You should ask targeted questions."
         ),
     ),
@@ -61,7 +61,7 @@ LLM_AGENT_TOOLS = [
         # func=search.run,
         func=jsSearch,
         description=(
-            "當你被問到高雄的近期活動時，請使用這項工具"
+            "當你被問到高雄的旅遊活動或是近期活動時，請使用這項工具"
             "Use Only when you need to answer questions about recent events in Kaohsiung or attraction recommendations in Kaohsiung"
             " You should ask targeted questions."
         ),
